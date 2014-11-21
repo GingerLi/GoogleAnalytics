@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E270B5A1A1DC3C50088EEA8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E270B591A1DC3C50088EEA8 /* Cocoa.framework */; };
+		3E270B641A1DC3C50088EEA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E270B621A1DC3C50088EEA8 /* InfoPlist.strings */; };
+		3E270B661A1DC3C50088EEA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B651A1DC3C50088EEA8 /* main.m */; };
+		3E270B6A1A1DC3C50088EEA8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3E270B681A1DC3C50088EEA8 /* Credits.rtf */; };
+		3E270B6D1A1DC3C50088EEA8 /* GAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B6C1A1DC3C50088EEA8 /* GAAppDelegate.m */; };
+		3E270B701A1DC3C50088EEA8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E270B6E1A1DC3C50088EEA8 /* MainMenu.xib */; };
+		3E270B721A1DC3C50088EEA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E270B711A1DC3C50088EEA8 /* Images.xcassets */; };
+		3E270B791A1DC3C60088EEA8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E270B781A1DC3C60088EEA8 /* XCTest.framework */; };
+		3E270B7A1A1DC3C60088EEA8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E270B591A1DC3C50088EEA8 /* Cocoa.framework */; };
+		3E270B821A1DC3C60088EEA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E270B801A1DC3C60088EEA8 /* InfoPlist.strings */; };
+		3E270B841A1DC3C60088EEA8 /* googleAnalyticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B831A1DC3C60088EEA8 /* googleAnalyticsTests.m */; };
+		3E270B961A1DC3FA0088EEA8 /* GARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B901A1DC3FA0088EEA8 /* GARequest.m */; };
+		3E270B971A1DC3FA0088EEA8 /* GATracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B921A1DC3FA0088EEA8 /* GATracker.m */; };
+		3E270B981A1DC3FA0088EEA8 /* GAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B941A1DC3FA0088EEA8 /* GAUtils.m */; };
+		3E270B9E1A1DC4730088EEA8 /* GAEventHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B9B1A1DC4730088EEA8 /* GAEventHit.m */; };
+		3E270B9F1A1DC4730088EEA8 /* GAExceptionHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B9D1A1DC4730088EEA8 /* GAExceptionHit.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E270B7B1A1DC3C60088EEA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E270B4E1A1DC3C50088EEA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E270B551A1DC3C50088EEA8;
+			remoteInfo = googleAnalytics;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E270B561A1DC3C50088EEA8 /* googleAnalytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googleAnalytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E270B591A1DC3C50088EEA8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3E270B5C1A1DC3C50088EEA8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		3E270B5D1A1DC3C50088EEA8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3E270B5E1A1DC3C50088EEA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3E270B611A1DC3C50088EEA8 /* googleAnalytics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "googleAnalytics-Info.plist"; sourceTree = "<group>"; };
+		3E270B631A1DC3C50088EEA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3E270B651A1DC3C50088EEA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3E270B671A1DC3C50088EEA8 /* googleAnalytics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "googleAnalytics-Prefix.pch"; sourceTree = "<group>"; };
+		3E270B691A1DC3C50088EEA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		3E270B6B1A1DC3C50088EEA8 /* GAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAAppDelegate.h; sourceTree = "<group>"; };
+		3E270B6C1A1DC3C50088EEA8 /* GAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAAppDelegate.m; sourceTree = "<group>"; };
+		3E270B6F1A1DC3C50088EEA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		3E270B711A1DC3C50088EEA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3E270B771A1DC3C60088EEA8 /* googleAnalyticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = googleAnalyticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E270B781A1DC3C60088EEA8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3E270B7F1A1DC3C60088EEA8 /* googleAnalyticsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "googleAnalyticsTests-Info.plist"; sourceTree = "<group>"; };
+		3E270B811A1DC3C60088EEA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3E270B831A1DC3C60088EEA8 /* googleAnalyticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = googleAnalyticsTests.m; sourceTree = "<group>"; };
+		3E270B8F1A1DC3FA0088EEA8 /* GARequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GARequest.h; sourceTree = "<group>"; };
+		3E270B901A1DC3FA0088EEA8 /* GARequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GARequest.m; sourceTree = "<group>"; };
+		3E270B911A1DC3FA0088EEA8 /* GATracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GATracker.h; sourceTree = "<group>"; };
+		3E270B921A1DC3FA0088EEA8 /* GATracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GATracker.m; sourceTree = "<group>"; };
+		3E270B931A1DC3FA0088EEA8 /* GAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAUtils.h; sourceTree = "<group>"; };
+		3E270B941A1DC3FA0088EEA8 /* GAUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAUtils.m; sourceTree = "<group>"; };
+		3E270B991A1DC45E0088EEA8 /* GAHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAHit.h; sourceTree = "<group>"; };
+		3E270B9A1A1DC4730088EEA8 /* GAEventHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAEventHit.h; sourceTree = "<group>"; };
+		3E270B9B1A1DC4730088EEA8 /* GAEventHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAEventHit.m; sourceTree = "<group>"; };
+		3E270B9C1A1DC4730088EEA8 /* GAExceptionHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAExceptionHit.h; sourceTree = "<group>"; };
+		3E270B9D1A1DC4730088EEA8 /* GAExceptionHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAExceptionHit.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E270B531A1DC3C50088EEA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E270B5A1A1DC3C50088EEA8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E270B741A1DC3C60088EEA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E270B7A1A1DC3C60088EEA8 /* Cocoa.framework in Frameworks */,
+				3E270B791A1DC3C60088EEA8 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E270B4D1A1DC3C50088EEA8 = {
+			isa = PBXGroup;
+			children = (
+				3E270B5F1A1DC3C50088EEA8 /* googleAnalytics */,
+				3E270B7D1A1DC3C60088EEA8 /* googleAnalyticsTests */,
+				3E270B581A1DC3C50088EEA8 /* Frameworks */,
+				3E270B571A1DC3C50088EEA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3E270B571A1DC3C50088EEA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E270B561A1DC3C50088EEA8 /* googleAnalytics.app */,
+				3E270B771A1DC3C60088EEA8 /* googleAnalyticsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E270B581A1DC3C50088EEA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E270B591A1DC3C50088EEA8 /* Cocoa.framework */,
+				3E270B781A1DC3C60088EEA8 /* XCTest.framework */,
+				3E270B5B1A1DC3C50088EEA8 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E270B5B1A1DC3C50088EEA8 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E270B5C1A1DC3C50088EEA8 /* AppKit.framework */,
+				3E270B5D1A1DC3C50088EEA8 /* CoreData.framework */,
+				3E270B5E1A1DC3C50088EEA8 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		3E270B5F1A1DC3C50088EEA8 /* googleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				3E270B9A1A1DC4730088EEA8 /* GAEventHit.h */,
+				3E270B9B1A1DC4730088EEA8 /* GAEventHit.m */,
+				3E270B9C1A1DC4730088EEA8 /* GAExceptionHit.h */,
+				3E270B9D1A1DC4730088EEA8 /* GAExceptionHit.m */,
+				3E270B991A1DC45E0088EEA8 /* GAHit.h */,
+				3E270B8F1A1DC3FA0088EEA8 /* GARequest.h */,
+				3E270B901A1DC3FA0088EEA8 /* GARequest.m */,
+				3E270B911A1DC3FA0088EEA8 /* GATracker.h */,
+				3E270B921A1DC3FA0088EEA8 /* GATracker.m */,
+				3E270B931A1DC3FA0088EEA8 /* GAUtils.h */,
+				3E270B941A1DC3FA0088EEA8 /* GAUtils.m */,
+				3E270B6B1A1DC3C50088EEA8 /* GAAppDelegate.h */,
+				3E270B6C1A1DC3C50088EEA8 /* GAAppDelegate.m */,
+				3E270B6E1A1DC3C50088EEA8 /* MainMenu.xib */,
+				3E270B711A1DC3C50088EEA8 /* Images.xcassets */,
+				3E270B601A1DC3C50088EEA8 /* Supporting Files */,
+			);
+			path = googleAnalytics;
+			sourceTree = "<group>";
+		};
+		3E270B601A1DC3C50088EEA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E270B611A1DC3C50088EEA8 /* googleAnalytics-Info.plist */,
+				3E270B621A1DC3C50088EEA8 /* InfoPlist.strings */,
+				3E270B651A1DC3C50088EEA8 /* main.m */,
+				3E270B671A1DC3C50088EEA8 /* googleAnalytics-Prefix.pch */,
+				3E270B681A1DC3C50088EEA8 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E270B7D1A1DC3C60088EEA8 /* googleAnalyticsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E270B831A1DC3C60088EEA8 /* googleAnalyticsTests.m */,
+				3E270B7E1A1DC3C60088EEA8 /* Supporting Files */,
+			);
+			path = googleAnalyticsTests;
+			sourceTree = "<group>";
+		};
+		3E270B7E1A1DC3C60088EEA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E270B7F1A1DC3C60088EEA8 /* googleAnalyticsTests-Info.plist */,
+				3E270B801A1DC3C60088EEA8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3E270B551A1DC3C50088EEA8 /* googleAnalytics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E270B871A1DC3C60088EEA8 /* Build configuration list for PBXNativeTarget "googleAnalytics" */;
+			buildPhases = (
+				3E270B521A1DC3C50088EEA8 /* Sources */,
+				3E270B531A1DC3C50088EEA8 /* Frameworks */,
+				3E270B541A1DC3C50088EEA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = googleAnalytics;
+			productName = googleAnalytics;
+			productReference = 3E270B561A1DC3C50088EEA8 /* googleAnalytics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3E270B761A1DC3C60088EEA8 /* googleAnalyticsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E270B8A1A1DC3C60088EEA8 /* Build configuration list for PBXNativeTarget "googleAnalyticsTests" */;
+			buildPhases = (
+				3E270B731A1DC3C60088EEA8 /* Sources */,
+				3E270B741A1DC3C60088EEA8 /* Frameworks */,
+				3E270B751A1DC3C60088EEA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E270B7C1A1DC3C60088EEA8 /* PBXTargetDependency */,
+			);
+			name = googleAnalyticsTests;
+			productName = googleAnalyticsTests;
+			productReference = 3E270B771A1DC3C60088EEA8 /* googleAnalyticsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E270B4E1A1DC3C50088EEA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GA;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = trendmicro;
+				TargetAttributes = {
+					3E270B761A1DC3C60088EEA8 = {
+						TestTargetID = 3E270B551A1DC3C50088EEA8;
+					};
+				};
+			};
+			buildConfigurationList = 3E270B511A1DC3C50088EEA8 /* Build configuration list for PBXProject "googleAnalytics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3E270B4D1A1DC3C50088EEA8;
+			productRefGroup = 3E270B571A1DC3C50088EEA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3E270B551A1DC3C50088EEA8 /* googleAnalytics */,
+				3E270B761A1DC3C60088EEA8 /* googleAnalyticsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E270B541A1DC3C50088EEA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E270B641A1DC3C50088EEA8 /* InfoPlist.strings in Resources */,
+				3E270B721A1DC3C50088EEA8 /* Images.xcassets in Resources */,
+				3E270B6A1A1DC3C50088EEA8 /* Credits.rtf in Resources */,
+				3E270B701A1DC3C50088EEA8 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E270B751A1DC3C60088EEA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E270B821A1DC3C60088EEA8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E270B521A1DC3C50088EEA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E270B971A1DC3FA0088EEA8 /* GATracker.m in Sources */,
+				3E270B6D1A1DC3C50088EEA8 /* GAAppDelegate.m in Sources */,
+				3E270B981A1DC3FA0088EEA8 /* GAUtils.m in Sources */,
+				3E270B661A1DC3C50088EEA8 /* main.m in Sources */,
+				3E270B961A1DC3FA0088EEA8 /* GARequest.m in Sources */,
+				3E270B9E1A1DC4730088EEA8 /* GAEventHit.m in Sources */,
+				3E270B9F1A1DC4730088EEA8 /* GAExceptionHit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E270B731A1DC3C60088EEA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E270B841A1DC3C60088EEA8 /* googleAnalyticsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E270B7C1A1DC3C60088EEA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E270B551A1DC3C50088EEA8 /* googleAnalytics */;
+			targetProxy = 3E270B7B1A1DC3C60088EEA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3E270B621A1DC3C50088EEA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E270B631A1DC3C50088EEA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3E270B681A1DC3C50088EEA8 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E270B691A1DC3C50088EEA8 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		3E270B6E1A1DC3C50088EEA8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E270B6F1A1DC3C50088EEA8 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		3E270B801A1DC3C60088EEA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E270B811A1DC3C60088EEA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3E270B851A1DC3C60088EEA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3E270B861A1DC3C60088EEA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3E270B881A1DC3C60088EEA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "googleAnalytics/googleAnalytics-Prefix.pch";
+				INFOPLIST_FILE = "googleAnalytics/googleAnalytics-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3E270B891A1DC3C60088EEA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "googleAnalytics/googleAnalytics-Prefix.pch";
+				INFOPLIST_FILE = "googleAnalytics/googleAnalytics-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3E270B8B1A1DC3C60088EEA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/googleAnalytics.app/Contents/MacOS/googleAnalytics";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "googleAnalytics/googleAnalytics-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "googleAnalyticsTests/googleAnalyticsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3E270B8C1A1DC3C60088EEA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/googleAnalytics.app/Contents/MacOS/googleAnalytics";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "googleAnalytics/googleAnalytics-Prefix.pch";
+				INFOPLIST_FILE = "googleAnalyticsTests/googleAnalyticsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E270B511A1DC3C50088EEA8 /* Build configuration list for PBXProject "googleAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E270B851A1DC3C60088EEA8 /* Debug */,
+				3E270B861A1DC3C60088EEA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E270B871A1DC3C60088EEA8 /* Build configuration list for PBXNativeTarget "googleAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E270B881A1DC3C60088EEA8 /* Debug */,
+				3E270B891A1DC3C60088EEA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3E270B8A1A1DC3C60088EEA8 /* Build configuration list for PBXNativeTarget "googleAnalyticsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E270B8B1A1DC3C60088EEA8 /* Debug */,
+				3E270B8C1A1DC3C60088EEA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E270B4E1A1DC3C50088EEA8 /* Project object */;
+}
