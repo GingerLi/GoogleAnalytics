@@ -33,7 +33,7 @@
  By default, this is set to `120`, which indicates tracking information should
  be dispatched automatically every 120 seconds.
  */
-@property (assign) NSTimeInterval dispatchInterval;
+@property (nonatomic,assign) NSTimeInterval dispatchInterval;
 
 + (GATracker *)trackerWithID:(NSString *)trackingID;
 

@@ -23,6 +23,9 @@
 		3E270B981A1DC3FA0088EEA8 /* GAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B941A1DC3FA0088EEA8 /* GAUtils.m */; };
 		3E270B9E1A1DC4730088EEA8 /* GAEventHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B9B1A1DC4730088EEA8 /* GAEventHit.m */; };
 		3E270B9F1A1DC4730088EEA8 /* GAExceptionHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B9D1A1DC4730088EEA8 /* GAExceptionHit.m */; };
+		3E270BA61A233DFE0088EEA8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E270BA51A233DFE0088EEA8 /* CoreFoundation.framework */; };
+		3E270BA81A233E430088EEA8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E270BA71A233E430088EEA8 /* SystemConfiguration.framework */; };
+		3E270BAB1A233EBE0088EEA8 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270BAA1A233EBE0088EEA8 /* AFNetworkReachabilityManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,10 @@
 		3E270B9B1A1DC4730088EEA8 /* GAEventHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAEventHit.m; sourceTree = "<group>"; };
 		3E270B9C1A1DC4730088EEA8 /* GAExceptionHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAExceptionHit.h; sourceTree = "<group>"; };
 		3E270B9D1A1DC4730088EEA8 /* GAExceptionHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAExceptionHit.m; sourceTree = "<group>"; };
+		3E270BA51A233DFE0088EEA8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		3E270BA71A233E430088EEA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3E270BA91A233EBE0088EEA8 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		3E270BAA1A233EBE0088EEA8 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E270BA81A233E430088EEA8 /* SystemConfiguration.framework in Frameworks */,
+				3E270BA61A233DFE0088EEA8 /* CoreFoundation.framework in Frameworks */,
 				3E270B5A1A1DC3C50088EEA8 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +120,8 @@
 		3E270B581A1DC3C50088EEA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E270BA71A233E430088EEA8 /* SystemConfiguration.framework */,
+				3E270BA51A233DFE0088EEA8 /* CoreFoundation.framework */,
 				3E270B591A1DC3C50088EEA8 /* Cocoa.framework */,
 				3E270B781A1DC3C60088EEA8 /* XCTest.framework */,
 				3E270B5B1A1DC3C50088EEA8 /* Other Frameworks */,
@@ -142,6 +153,8 @@
 				3E270B921A1DC3FA0088EEA8 /* GATracker.m */,
 				3E270B931A1DC3FA0088EEA8 /* GAUtils.h */,
 				3E270B941A1DC3FA0088EEA8 /* GAUtils.m */,
+				3E270BA91A233EBE0088EEA8 /* AFNetworkReachabilityManager.h */,
+				3E270BAA1A233EBE0088EEA8 /* AFNetworkReachabilityManager.m */,
 				3E270B6B1A1DC3C50088EEA8 /* GAAppDelegate.h */,
 				3E270B6C1A1DC3C50088EEA8 /* GAAppDelegate.m */,
 				3E270B6E1A1DC3C50088EEA8 /* MainMenu.xib */,
@@ -286,6 +299,7 @@
 				3E270B661A1DC3C50088EEA8 /* main.m in Sources */,
 				3E270B961A1DC3FA0088EEA8 /* GARequest.m in Sources */,
 				3E270B9E1A1DC4730088EEA8 /* GAEventHit.m in Sources */,
+				3E270BAB1A233EBE0088EEA8 /* AFNetworkReachabilityManager.m in Sources */,
 				3E270B9F1A1DC4730088EEA8 /* GAExceptionHit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

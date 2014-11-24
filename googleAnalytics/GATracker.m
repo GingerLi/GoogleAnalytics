@@ -11,6 +11,7 @@
 #import "GAHit.h"
 #import "GAEventHit.h"
 #import "GAExceptionHit.h"
+#import "AFNetworkReachabilityManager.h"
 
 #include <sys/sysctl.h>
 
@@ -31,8 +32,9 @@ NSString *const kGASavedHitsKey = @"googleAnalyticsOldHits";
     if (trackingID) {
         
         // Restore prev hits
-        NSArray *prevHits = [[NSUserDefaults standardUserDefaults] objectForKey:kGASavedHitsKey];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGASavedHitsKey];
+        NSString * key = [NSString stringWithFormat:@"%@.%@", kGASavedHitsKey, trackingID];
+        NSArray *prevHits = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         if (prevHits && prevHits.count > 0) {
@@ -51,33 +53,73 @@ NSString *const kGASavedHitsKey = @"googleAnalyticsOldHits";
     {
         _trackingID = trackingID;
         _hits = [NSMutableArray array];
-        _queue  = dispatch_queue_create("com.trendmicro.google-analytics", NULL);
+        const char * label = [[NSString stringWithFormat:@"com.trendmicro.google-analytics.%@",trackingID] cStringUsingEncoding:NSUTF8StringEncoding];
+        _queue  = dispatch_queue_create(label, NULL);
         _useSSL = YES;
     }
 #ifdef DEBUG
     self.debug = YES;
-    self.dispatchInterval = 0;
+    self.dispatchInterval = INFINITY;
 #endif
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSApplicationWillTerminateNotification object:NSApp queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-//        @strongify(self);
     
-        NSMutableArray *saveHits = [NSMutableArray arrayWithCapacity:self.hits.count];
-        [self.hits enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    __weak __typeof(self) weakSelf = self;
+
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [[NSNotificationCenter defaultCenter] addObserverForName:AFNetworkingReachabilityDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        if ([[note.userInfo valueForKey:AFNetworkingReachabilityNotificationStatusItem] integerValue] > AFNetworkReachabilityStatusNotReachable)
+        {
+            __strong __typeof(weakSelf) strongSelf = weakSelf;
+            NSLog(@"Reachability: %@", note);
+            [strongSelf dispatch];
+        }
+        
+    }];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSApplicationWillTerminateNotification object:NSApp queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+      
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        NSMutableArray *saveHits = [NSMutableArray arrayWithCapacity:strongSelf.hits.count];
+        [strongSelf.hits enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [saveHits addObject:[obj dictionaryRepresentation]];
         }];
         
         
         [NSApp replyToApplicationShouldTerminate:NO];
         
-        [[NSUserDefaults standardUserDefaults] setObject:saveHits forKey:kGASavedHitsKey];
+        NSString * key = [NSString stringWithFormat:@"%@.%@", kGASavedHitsKey, strongSelf.trackingID];
+        [[NSUserDefaults standardUserDefaults] setObject:saveHits forKey:key];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }];
+    
     return self;
+}
+
+- (void)setDispatchInterval:(NSTimeInterval)dispatchInterval;
+{
+    _dispatchInterval = dispatchInterval;
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    
+    if (dispatchInterval > 0) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:dispatchInterval target:self selector:@selector(dispatch:) userInfo:NULL repeats:YES];
+    }
+}
+
+- (void)dispatch:(NSTimer *)timer;
+{
+    NSLog(@"[%@] Fire events (size: %@)", [timer fireDate], @(self.hits.count));
+    [self dispatch];
 }
 
 - (void)dealloc
 {
-    [self dispatch];
+//    [self dispatch];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:NSApplicationWillTerminateNotification object:NSApp];
+    
+    
 }
 
 // -------------------------------------------------------------------------------

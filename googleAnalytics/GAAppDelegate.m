@@ -11,16 +11,22 @@
 #import "GATracker.h"
 #import "GAEventHit.h"
 
+
+@interface GAAppDelegate()
+@property(strong) GATracker * tracker;
+
+@end
 @implementation GAAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    _tracker = [GATracker trackerWithID:@"UA-56518236-1"];
     
 }
 
 - (IBAction)send:(id)sender {
-    GATracker * tracker = [GATracker trackerWithID:@"UA-56518236-1"];
-    [tracker sendEventWithCategory:@"ginger" action:@"1" label:@"1" value:@1];
+    
+    [_tracker sendEventWithCategory:@"appLaunch" action:@"1" label:@"1" value:@1];
 }
 @end
