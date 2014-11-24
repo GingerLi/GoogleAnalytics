@@ -10,8 +10,8 @@
 
 @interface GAExceptionHit : NSObject <GAHit>
 
-@property (nonatomic) NSString *description;
-@property (nonatomic) BOOL fatal;
+@property (nonatomic, strong) NSString *exceptionDescription;
+@property (nonatomic, assign) BOOL fatal;
 
 + (GAExceptionHit *)exceptionHitWithDescription:(NSString *)description isFatal:(BOOL)isFatal;
 

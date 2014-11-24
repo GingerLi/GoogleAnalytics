@@ -17,7 +17,7 @@
     NSMutableDictionary *dict = [@{@"t" : @"exception"} mutableCopy];
     
     if (self.description)
-        [dict setValue:self.description forKey:@"exd"];
+        [dict setValue:self.exceptionDescription forKey:@"exd"];
     
     [dict setValue:@(self.fatal) forKey:@"exf"];
     
@@ -28,7 +28,7 @@
 + (GAExceptionHit *)exceptionHitWithDescription:(NSString *)description isFatal:(BOOL)isFatal;
 {
     GAExceptionHit *hit = [GAExceptionHit new];
-    hit.description = description;
+    hit.exceptionDescription = description;
     hit.fatal = isFatal;
     return hit;
 }

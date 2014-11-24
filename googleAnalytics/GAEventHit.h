@@ -11,10 +11,10 @@
 
 @interface GAEventHit : NSObject <GAHit>
 
-@property NSString *category;
-@property NSString *action;
-@property NSString *label;
-@property NSValue *value;
+@property(nonatomic, strong) NSString *category;
+@property(nonatomic, strong) NSString *action;
+@property(nonatomic, strong) NSString *label;
+@property(nonatomic, strong) NSValue *value;
 
 + (id)eventCategory:(NSString *)ec action:(NSString *)ea label:(NSString *)el value:(NSNumber *)ev;
 

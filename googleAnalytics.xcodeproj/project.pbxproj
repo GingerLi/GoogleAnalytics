@@ -25,7 +25,7 @@
 		3E270B9F1A1DC4730088EEA8 /* GAExceptionHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B9D1A1DC4730088EEA8 /* GAExceptionHit.m */; };
 		3E270BA61A233DFE0088EEA8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E270BA51A233DFE0088EEA8 /* CoreFoundation.framework */; };
 		3E270BA81A233E430088EEA8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E270BA71A233E430088EEA8 /* SystemConfiguration.framework */; };
-		3E270BAB1A233EBE0088EEA8 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270BAA1A233EBE0088EEA8 /* AFNetworkReachabilityManager.m */; };
+		52284DED1A235FBF0069BE49 /* NetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52284DEC1A235FBF0069BE49 /* NetworkReachabilityManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +71,8 @@
 		3E270B9D1A1DC4730088EEA8 /* GAExceptionHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAExceptionHit.m; sourceTree = "<group>"; };
 		3E270BA51A233DFE0088EEA8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		3E270BA71A233E430088EEA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		3E270BA91A233EBE0088EEA8 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		3E270BAA1A233EBE0088EEA8 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		52284DEB1A235FBF0069BE49 /* NetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkReachabilityManager.h; sourceTree = "<group>"; };
+		52284DEC1A235FBF0069BE49 /* NetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkReachabilityManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +153,8 @@
 				3E270B921A1DC3FA0088EEA8 /* GATracker.m */,
 				3E270B931A1DC3FA0088EEA8 /* GAUtils.h */,
 				3E270B941A1DC3FA0088EEA8 /* GAUtils.m */,
-				3E270BA91A233EBE0088EEA8 /* AFNetworkReachabilityManager.h */,
-				3E270BAA1A233EBE0088EEA8 /* AFNetworkReachabilityManager.m */,
+				52284DEB1A235FBF0069BE49 /* NetworkReachabilityManager.h */,
+				52284DEC1A235FBF0069BE49 /* NetworkReachabilityManager.m */,
 				3E270B6B1A1DC3C50088EEA8 /* GAAppDelegate.h */,
 				3E270B6C1A1DC3C50088EEA8 /* GAAppDelegate.m */,
 				3E270B6E1A1DC3C50088EEA8 /* MainMenu.xib */,
@@ -294,12 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E270B971A1DC3FA0088EEA8 /* GATracker.m in Sources */,
+				52284DED1A235FBF0069BE49 /* NetworkReachabilityManager.m in Sources */,
 				3E270B6D1A1DC3C50088EEA8 /* GAAppDelegate.m in Sources */,
 				3E270B981A1DC3FA0088EEA8 /* GAUtils.m in Sources */,
 				3E270B661A1DC3C50088EEA8 /* main.m in Sources */,
 				3E270B961A1DC3FA0088EEA8 /* GARequest.m in Sources */,
 				3E270B9E1A1DC4730088EEA8 /* GAEventHit.m in Sources */,
-				3E270BAB1A233EBE0088EEA8 /* AFNetworkReachabilityManager.m in Sources */,
 				3E270B9F1A1DC4730088EEA8 /* GAExceptionHit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +513,7 @@
 				3E270B891A1DC3C60088EEA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E270B8A1A1DC3C60088EEA8 /* Build configuration list for PBXNativeTarget "googleAnalyticsTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +522,7 @@
 				3E270B8C1A1DC3C60088EEA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

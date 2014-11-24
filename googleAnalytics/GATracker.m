@@ -11,7 +11,7 @@
 #import "GAHit.h"
 #import "GAEventHit.h"
 #import "GAExceptionHit.h"
-#import "AFNetworkReachabilityManager.h"
+#import "NetworkReachabilityManager.h"
 
 #include <sys/sysctl.h>
 
@@ -64,9 +64,9 @@ NSString *const kGASavedHitsKey = @"googleAnalyticsOldHits";
     
     __weak __typeof(self) weakSelf = self;
 
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    [[NSNotificationCenter defaultCenter] addObserverForName:AFNetworkingReachabilityDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        if ([[note.userInfo valueForKey:AFNetworkingReachabilityNotificationStatusItem] integerValue] > AFNetworkReachabilityStatusNotReachable)
+    [[NetworkReachabilityManager sharedManager] startMonitoring];
+    [[NSNotificationCenter defaultCenter] addObserverForName:NetworkingReachabilityDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        if ([[note.userInfo valueForKey:NetworkingReachabilityNotificationStatusItem] integerValue] > NetworkReachabilityStatusNotReachable)
         {
             __strong __typeof(weakSelf) strongSelf = weakSelf;
             NSLog(@"Reachability: %@", note);
