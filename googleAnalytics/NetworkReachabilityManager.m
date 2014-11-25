@@ -31,19 +31,19 @@ static NetworkReachabilityStatus NetworkReachabilityStatusForFlags(SCNetworkReac
     }
 #endif
     else {
-        status = NetworkReachabilityStatusReachableViaWiFi;
+        status = NetworkReachabilityStatusReachable;
     }
 
     return status;
 }
 
 static void NetworkReachabilityCallback(SCNetworkReachabilityRef __unused target, SCNetworkReachabilityFlags flags, void *info) {
+    
     NetworkReachabilityStatus status = NetworkReachabilityStatusForFlags(flags);
-
 
     dispatch_async(dispatch_get_main_queue(), ^{
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-        [notificationCenter postNotificationName:NetworkingReachabilityDidChangeNotification object:nil userInfo:@{ NetworkingReachabilityNotificationStatusItem: @(status) }];
+        [notificationCenter postNotificationName:NetworkingReachabilityDidChangeNotification object:nil userInfo:@{ NetworkingReachabilityNotificationStatusItem:@(status) }];
     });
     
 }
@@ -117,7 +117,7 @@ static void NetworkReachabilityCallback(SCNetworkReachabilityRef __unused target
 }
 
 - (BOOL)isReachableViaWiFi {
-    return self.networkReachabilityStatus == NetworkReachabilityStatusReachableViaWiFi;
+    return self.networkReachabilityStatus == NetworkReachabilityStatusReachable;
 }
 
 #pragma mark -
@@ -129,13 +129,23 @@ static void NetworkReachabilityCallback(SCNetworkReachabilityRef __unused target
         return;
     }
 
-
     SCNetworkReachabilityContext context = {0, NULL, NULL, NULL, NULL};
     SCNetworkReachabilitySetCallback(self.networkReachability, NetworkReachabilityCallback, &context);
     SCNetworkReachabilityScheduleWithRunLoop(self.networkReachability, CFRunLoopGetMain(), kCFRunLoopCommonModes);
-
-
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
+        
+        SCNetworkReachabilityFlags flags;
+        SCNetworkReachabilityGetFlags(self.networkReachability, &flags);
+        NetworkReachabilityStatus status = NetworkReachabilityStatusForFlags(flags);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+            [notificationCenter postNotificationName:NetworkingReachabilityDidChangeNotification object:nil userInfo:@{ NetworkingReachabilityNotificationStatusItem: @(status) }];
+            
+            
+        });
+    });
 }
 
 - (void)stopMonitoring {

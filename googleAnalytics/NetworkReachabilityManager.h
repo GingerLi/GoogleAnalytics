@@ -5,11 +5,11 @@
 #import <Foundation/Foundation.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 
-typedef NS_ENUM(NSInteger, NetworkReachabilityStatus) {
-    NetworkReachabilityStatusUnknown          = -1,
-    NetworkReachabilityStatusNotReachable     = 0,
-    NetworkReachabilityStatusReachableViaWWAN = 1,
-    NetworkReachabilityStatusReachableViaWiFi = 2,
+typedef NS_ENUM(NSUInteger, NetworkReachabilityStatus) {
+    NetworkReachabilityStatusUnknown          = 0,
+    NetworkReachabilityStatusNotReachable     = 1,
+    NetworkReachabilityStatusReachableViaWWAN = 2,
+    NetworkReachabilityStatusReachable = 3,
 };
 
 /**

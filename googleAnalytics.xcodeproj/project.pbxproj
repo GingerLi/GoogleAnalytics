@@ -25,6 +25,8 @@
 		3E270B9F1A1DC4730088EEA8 /* GAExceptionHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270B9D1A1DC4730088EEA8 /* GAExceptionHit.m */; };
 		3E270BA61A233DFE0088EEA8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E270BA51A233DFE0088EEA8 /* CoreFoundation.framework */; };
 		3E270BA81A233E430088EEA8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E270BA71A233E430088EEA8 /* SystemConfiguration.framework */; };
+		3E270BAE1A2424B30088EEA8 /* GAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270BAD1A2424B30088EEA8 /* GAManager.m */; };
+		3E270BB91A2478A90088EEA8 /* ConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E270BB81A2478A90088EEA8 /* ConfigController.m */; };
 		52284DED1A235FBF0069BE49 /* NetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52284DEC1A235FBF0069BE49 /* NetworkReachabilityManager.m */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,10 @@
 		3E270B9D1A1DC4730088EEA8 /* GAExceptionHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAExceptionHit.m; sourceTree = "<group>"; };
 		3E270BA51A233DFE0088EEA8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		3E270BA71A233E430088EEA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3E270BAC1A2424B30088EEA8 /* GAManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAManager.h; sourceTree = "<group>"; };
+		3E270BAD1A2424B30088EEA8 /* GAManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAManager.m; sourceTree = "<group>"; };
+		3E270BB71A2478A90088EEA8 /* ConfigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigController.h; sourceTree = "<group>"; };
+		3E270BB81A2478A90088EEA8 /* ConfigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigController.m; sourceTree = "<group>"; };
 		52284DEB1A235FBF0069BE49 /* NetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkReachabilityManager.h; sourceTree = "<group>"; };
 		52284DEC1A235FBF0069BE49 /* NetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkReachabilityManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,10 +157,14 @@
 				3E270B901A1DC3FA0088EEA8 /* GARequest.m */,
 				3E270B911A1DC3FA0088EEA8 /* GATracker.h */,
 				3E270B921A1DC3FA0088EEA8 /* GATracker.m */,
+				3E270BAC1A2424B30088EEA8 /* GAManager.h */,
+				3E270BAD1A2424B30088EEA8 /* GAManager.m */,
 				3E270B931A1DC3FA0088EEA8 /* GAUtils.h */,
 				3E270B941A1DC3FA0088EEA8 /* GAUtils.m */,
 				52284DEB1A235FBF0069BE49 /* NetworkReachabilityManager.h */,
 				52284DEC1A235FBF0069BE49 /* NetworkReachabilityManager.m */,
+				3E270BB71A2478A90088EEA8 /* ConfigController.h */,
+				3E270BB81A2478A90088EEA8 /* ConfigController.m */,
 				3E270B6B1A1DC3C50088EEA8 /* GAAppDelegate.h */,
 				3E270B6C1A1DC3C50088EEA8 /* GAAppDelegate.m */,
 				3E270B6E1A1DC3C50088EEA8 /* MainMenu.xib */,
@@ -300,7 +310,9 @@
 				3E270B661A1DC3C50088EEA8 /* main.m in Sources */,
 				3E270B961A1DC3FA0088EEA8 /* GARequest.m in Sources */,
 				3E270B9E1A1DC4730088EEA8 /* GAEventHit.m in Sources */,
+				3E270BB91A2478A90088EEA8 /* ConfigController.m in Sources */,
 				3E270B9F1A1DC4730088EEA8 /* GAExceptionHit.m in Sources */,
+				3E270BAE1A2424B30088EEA8 /* GAManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -64,13 +64,16 @@ NSString *const kGASavedHitsKey = @"googleAnalyticsOldHits";
     
     __weak __typeof(self) weakSelf = self;
 
-    [[NetworkReachabilityManager sharedManager] startMonitoring];
     [[NSNotificationCenter defaultCenter] addObserverForName:NetworkingReachabilityDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        if ([[note.userInfo valueForKey:NetworkingReachabilityNotificationStatusItem] integerValue] > NetworkReachabilityStatusNotReachable)
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        if ([[note.userInfo valueForKey:NetworkingReachabilityNotificationStatusItem] unsignedIntegerValue] > NetworkReachabilityStatusNotReachable)
         {
-            __strong __typeof(weakSelf) strongSelf = weakSelf;
             NSLog(@"Reachability: %@", note);
             [strongSelf dispatch];
+            strongSelf.dispatchInterval = 0.0;
+            
+        } else {
+            strongSelf.dispatchInterval = INFINITY;
         }
         
     }];
@@ -116,9 +119,8 @@ NSString *const kGASavedHitsKey = @"googleAnalyticsOldHits";
 
 - (void)dealloc
 {
-//    [self dispatch];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:NSApplicationWillTerminateNotification object:NSApp];
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationWillTerminateNotification object:NSApp];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NetworkingReachabilityDidChangeNotification object:nil];
     
 }
 
@@ -149,7 +151,6 @@ NSString *const kGASavedHitsKey = @"googleAnalyticsOldHits";
 
 - (void)sendEventWithCategory:(NSString *)category action:(NSString *)action label:(NSString*)label value:(NSNumber*)value
 {
-
     [self trackHit:[GAEventHit eventCategory:category action:action label:label value:value ]];
 }
 
