@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "googleAnalytics/GATracker.m"
-            timestampString = "438592977.415583"
+            filePath = "googleAnalytics/ConfigController.m"
+            timestampString = "438662988.597278"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-initWithTrackingID:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "googleAnalytics/GATracker.m"
-            timestampString = "438592977.415583"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-initWithTrackingID:"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-write"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

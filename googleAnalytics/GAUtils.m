@@ -7,6 +7,7 @@
 //
 
 #import "GAUtils.h"
+#import "ConfigController.h"
 #include <sys/sysctl.h>
 
 @implementation GAUtils
@@ -24,19 +25,28 @@
 
 + (NSString *)userUUID
 {
-    NSUserDefaults* standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    if (standardUserDefaults)
-    {
-        NSString* userUUID = [standardUserDefaults stringForKey:@"UserUUID"];
-        if ([userUUID length] == 0)
-        { // generate one for the first time
-            userUUID = [self UUIDString];
-            [standardUserDefaults setObject:userUUID forKey:@"UserUUID"];
-            [standardUserDefaults synchronize];
-        }
-        return userUUID;
+//    NSUserDefaults* standardUserDefaults = [NSUserDefaults standardUserDefaults];
+//    if (standardUserDefaults)
+//    {
+//        NSString* userUUID = [standardUserDefaults stringForKey:@"UserUUID"];
+//        if ([userUUID length] == 0)
+//        { // generate one for the first time
+//            userUUID = [self UUIDString];
+//            [standardUserDefaults setObject:userUUID forKey:@"UserUUID"];
+//            [standardUserDefaults synchronize];
+//        }
+//        return userUUID;
+//    }
+//    return [self UUIDString];
+    
+    NSString * userUUID = [ConfigController objectForKey:@"UserUUID"];
+    if ([userUUID length] == 0) {
+        userUUID = [self UUIDString];
+        [ConfigController setObject:userUUID forKey:@"UserUUID"];
+        
     }
-    return [self UUIDString];
+    return userUUID;
+    
 }
 
 + (NSString *)userLanguage

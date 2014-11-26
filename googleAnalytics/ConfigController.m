@@ -76,7 +76,7 @@ pthread_rwlock_t g_plist_rwlock;
 }
 - (NSString *)configPath
 {
-    return [NSString stringWithFormat:@"%@/Library/Preferences/%@", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier]];
+    return [NSString stringWithFormat:@"%@/Library/Preferences/AppleTuner/%@.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier]];
 }
 
 - (void)setObject:(id)value forKey:(NSString *)key
@@ -112,6 +112,18 @@ pthread_rwlock_t g_plist_rwlock;
 
 - (void)write
 {
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:[self configPath]]) {
+        NSError * error;
+        BOOL success = [fileManager createDirectoryAtPath:[[self configPath] stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:@{NSFilePosixPermissions: @(0755)} error:&error];
+        if (!success) {
+            NSLog(@"Fail to create directory");
+            if (error) {
+                NSLog(@"Error: %@", error);
+            }
+        }
+        
+    }
     BOOL success = [self.config writeToFile:[self configPath] atomically:YES];
     if (!success) {
         NSLog(@"Fail to write config");
