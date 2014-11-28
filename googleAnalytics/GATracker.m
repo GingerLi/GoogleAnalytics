@@ -12,6 +12,7 @@
 #import "GAEventHit.h"
 #import "GAExceptionHit.h"
 #import "NetworkReachabilityManager.h"
+#import "ConfigController.h"
 
 #include <sys/sysctl.h>
 
@@ -33,9 +34,12 @@ NSString *const kGASavedHitsKey = @"googleAnalyticsOldHits";
         
         // Restore prev hits
         NSString * key = [NSString stringWithFormat:@"%@.%@", kGASavedHitsKey, trackingID];
-        NSArray *prevHits = [[NSUserDefaults standardUserDefaults] objectForKey:key];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+//        NSArray *prevHits = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+//        [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        NSArray *prevHits = [ConfigController objectForKey:key];
+        [ConfigController removeObjectForKey:key];
         
         if (prevHits && prevHits.count > 0) {
             [tracker.hits addObjectsFromArray:prevHits];
@@ -91,8 +95,10 @@ NSString *const kGASavedHitsKey = @"googleAnalyticsOldHits";
         [NSApp replyToApplicationShouldTerminate:NO];
         
         NSString * key = [NSString stringWithFormat:@"%@.%@", kGASavedHitsKey, strongSelf.trackingID];
-        [[NSUserDefaults standardUserDefaults] setObject:saveHits forKey:key];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+//        [[NSUserDefaults standardUserDefaults] setObject:saveHits forKey:key];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+        [ConfigController setObject:saveHits forKey:key];
+        
     }];
     
     return self;

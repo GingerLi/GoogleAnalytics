@@ -63,7 +63,7 @@ pthread_rwlock_t g_plist_rwlock;
         
         if(pthread_rwlock_init(&g_plist_rwlock, NULL) != 0)
         {
-            NSLog(@"Fail to init lock");
+            NSLog(@"Fail to init rw lock");
         }
         
     }
@@ -86,24 +86,26 @@ pthread_rwlock_t g_plist_rwlock;
         
         pthread_rwlock_unlock(&g_plist_rwlock);
     }
-    
     [self write];
+    
 }
 
 - (void)removeObjectForKey:(NSString *)key
 {
     if (0 == pthread_rwlock_wrlock(&g_plist_rwlock)) {
         [self.config removeObjectForKey:key];
+        
         pthread_rwlock_unlock(&g_plist_rwlock);
     }
-    
     [self write];
+    
 }
 
 - (id)objectForKey:(NSString *)key
 {
     if (0 == pthread_rwlock_rdlock(&g_plist_rwlock)) {
         id value = [self.config valueForKeyPath:key];
+        
         pthread_rwlock_unlock(&g_plist_rwlock);
         return value;
     }
@@ -117,17 +119,24 @@ pthread_rwlock_t g_plist_rwlock;
         NSError * error;
         BOOL success = [fileManager createDirectoryAtPath:[[self configPath] stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:@{NSFilePosixPermissions: @(0755)} error:&error];
         if (!success) {
-            NSLog(@"Fail to create directory");
+            NSLog(@"Fail to create directory : %@", [[self configPath] stringByDeletingLastPathComponent]);
             if (error) {
                 NSLog(@"Error: %@", error);
             }
         }
         
     }
-    BOOL success = [self.config writeToFile:[self configPath] atomically:YES];
-    if (!success) {
-        NSLog(@"Fail to write config");
+    
+    if (0 == pthread_rwlock_rdlock(&g_plist_rwlock)) {
+        BOOL success = [self.config writeToFile:[self configPath] atomically:YES];
+        
+        pthread_rwlock_unlock(&g_plist_rwlock);
+        
+        if (!success) {
+            NSLog(@"Fail to write config: %@",self.config);
+        }
     }
+    
 }
 
 @end

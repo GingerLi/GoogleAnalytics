@@ -72,7 +72,7 @@
 
 - (NSString*)postBody
 {
-     __block NSString * postBody = [NSString stringWithFormat:@"v=1&t=%@&cid=%@&an=%@&av=%@&cd1=%@&cd2=%@&cd3=%@", self.tracker.trackingID, self.cid, self.appName, self.appVersion, self.customDimension1, self.customDimension2, self.customDimension3];
+     __block NSString * postBody = [NSString stringWithFormat:@"v=1&tid=%@&cid=%@&an=%@&av=%@&cd1=%@&cd2=%@&cd3=%@", self.tracker.trackingID, self.cid, self.appName, self.appVersion, self.customDimension1, self.customDimension2, self.customDimension3];
     [self.param enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         postBody=[postBody stringByAppendingFormat:@"&%@=%@",key,obj];
     }];
